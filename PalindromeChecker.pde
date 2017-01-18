@@ -16,7 +16,7 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  if(reverse(word).equals(word))
+  if(reverse(plain(word)).equals(plain(word)))
   {
     return true;
   }
@@ -31,4 +31,16 @@ public String reverse(String str)
     sNew = sNew + str.substring(nI, nI+1);
   }
   return sNew;
+}
+public String plain(String sWord)
+{
+  String newStr = new String();
+  for (int i = 0; i < sWord.length(); i++)
+  {
+    if (Character.isLetter(sWord.charAt(i)) == true)
+    {
+        newStr = newStr + sWord.charAt(i);
+    }
+  }
+  return newStr.toLowerCase();
 }
